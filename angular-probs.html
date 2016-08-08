@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="angular-probs.js"></script>
+</head>
+<body ng-controller="myController">
+
+	<!-- 1. Write an app that asks the user to input his age in a number input.
+	Then when he clicks a "Submit" button, it displays the year they were born. -->
+	<div class=row>
+		Please enter your age below.
+		<input type="text" ng-model="age">
+		<button ng-click="findYear()">Submit</button>
+		You were born in {{result}}.
+	</div>
+
+</body>
+</html>

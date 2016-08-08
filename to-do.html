@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="toDoApp">
+<head>
+	<title></title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="to-do.js"></script>
+</head>
+<body ng-controller="toDoController">
+
+<!-- 1. Make a to-do app
+1a. Make each task an object with a title, description, and a deadline. 
+1a. Make a from that accepts new title, description, and deadline.
+1bonus: Make a checkbox that allows the user to mark a task as complete
+1super bonus: Allow removal of tasks -->
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Deadline</th>
+			<th>Completed</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="task in tasks">
+			<td>{{task.title}}</td>
+			<td>{{task.description}}</td>
+			<td>{{task.deadline}}</td>
+			<td><input type="checkbox" ng-model="task.completed"></td>
+		</tr>
+	</tbody>
+</table>
+
+<form ng-submit="addToDo()">
+	<div class="form-group">
+		<label for="newTitle">New Title</label>
+		<input type="text" ng-model="newTitle">	
+		<label for="newDescription">New Description</label>
+		<input type="text" ng-model="newDescription">	
+		<label for="newDeadline">New Deadline</label>
+		<input type="text" ng-model="newDeadline">
+	</div>	
+	<button type="submit" class="button">Click to add To-Do</button>
+</form>	
+
+<button class="button" ng-click="removeToDo()">Click to remove To-Do</button> 
+
+</body>
+</html>
