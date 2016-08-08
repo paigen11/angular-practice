@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="changeMakerApp">
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="change-maker.js"></script>
+</head>
+<body ng-controller="changeMakerController">
+
+<!-- 3. Instructor Rob used to work at a super market as a cashier. His work experience there has made him an expert in making change.
+
+Write an app to make the change needed - in quarters, dimes, nickels, and pennies - given the bill amount, and the given amount.
+
+The app should have
+
+1. A number input to enter the bill amount.
+2. A number input to enter the given amount.
+3. A "Make change!" button
+4. When the "Make change!" button is clicked, it should display the number of coins for each coin type that are needed. For example:
+
+  * 4 quarters
+  * 3 dimes
+  * 0 nickels
+  * 2 pennies
+
+5. Display the coin image next to the number
+5. Bonus: Instead of displaying the numbers, display the correct number of coins.
+ -->
+
+<div class="row">
+	<div class="col">
+		Enter your bill amount here:
+		<input type='text' ng-model="billAmount">
+	</div>
+	<div class="col">
+		Enter the amount the person paid:
+		<input type="text" ng-model="givenAmount">
+	</div>
+	<button ng-click="makeChange()">Make Change</button> 
+</div>
+
+<div class="row">
+	<div class="col">
+	Total Owed: ${{total}}
+	</div>
+	<div class="col">
+	<img src="images/quarter-front.png">
+	Quarters: {{quarters}}
+	</div>
+	<div class="col">
+	<img src="images/dime-front.png">
+	Dimes: {{dimes}}
+	</div>
+	<div class="col">
+	<img src="images/nickle-front.png">
+	Nickels: {{nickles}}
+	</div>
+	<div class="col">
+	<img src="images/penny-front.png">
+	Pennies: {{pennies}}
+	</div>
+</div>
+
+
+
+</body>
+</html>
