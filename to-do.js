@@ -32,13 +32,7 @@ toDoApp.controller('toDoController', function($scope){
 		$scope.tasks.push({title: $scope.newTitle, description: $scope.newDescription, deadline: $scope.newDeadline}); 
 	}
 
-	// //not quite working yet
-	// $scope.removeToDo = function(){
-	// 	for(var i = $scope.tasks.length; i >= 0; i--){
-	// 		if($scope.checkBoxModel[i] === true){
-	// 		$scope.tasks.splice(index,1);
-			
-	// 		}
-	// 	}
-	// }
+	$scope.removeToDo = function(index){
+		$scope.tasks.splice(index,1);		
+	}
 })

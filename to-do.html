@@ -31,7 +31,7 @@
 			<td>{{task.title}}</td>
 			<td>{{task.description}}</td>
 			<td>{{task.deadline}}</td>
-			<td><input type="checkbox" ng-model="task.completed"></td>
+			<td><input type="checkbox" ng-model="task.completed" ng-click="removeToDo($index)"></td>
 		</tr>
 	</tbody>
 </table>
@@ -47,8 +47,6 @@
 	</div>	
 	<button type="submit" class="button">Click to add To-Do</button>
 </form>	
-
-<button class="button" ng-click="removeToDo()">Click to remove To-Do</button> 
 
 </body>
 </html>
